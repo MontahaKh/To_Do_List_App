@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card" id="auth-section">
+        <h1>Mini Todo App</h1>
+        <p class="subtitle">Inscription et connexion pour gerer vos taches par date.</p>
+
+        <div class="tabs">
+          <button id="tab-login" class="active" type="button">Connexion</button>
+          <button id="tab-register" type="button">Inscription</button>
+        </div>
+
+        <form id="login-form" class="form active">
+          <input type="email" id="login-email" placeholder="Email" required />
+          <input type="password" id="login-password" placeholder="Mot de passe" required />
+          <button type="submit">Se connecter</button>
+        </form>
+
+        <form id="register-form" class="form">
+          <input type="text" id="register-name" placeholder="Nom" required />
+          <input type="email" id="register-email" placeholder="Email" required />
+          <input type="password" id="register-password" placeholder="Mot de passe" required />
+          <button type="submit">Creer un compte</button>
+        </form>
+      </section>
+
+      <section class="card hidden" id="tasks-section">
+        <div class="top-row">
+          <h2 id="welcome"></h2>
+          <button id="logout" type="button" class="secondary">Deconnexion</button>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <input type="text" id="task-title" placeholder="Nouvelle tache" required />
+          <input type="date" id="task-date" required />
+          <button type="submit">Ajouter</button>
+        </form>
+
+        <div class="filters">
+          <label for="filter-date">Filtrer par date:</label>
+          <input type="date" id="filter-date" />
+          <button id="clear-filter" class="secondary" type="button">Reset</button>
+        </div>
+
+        <ul id="task-list"></ul>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

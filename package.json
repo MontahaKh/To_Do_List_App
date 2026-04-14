@@ -1,0 +1,21 @@
+{
+  "name": "mini-devops-app",
+  "version": "1.0.0",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "node app/app.js",
+    "dev": "node --watch app/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Mini Todo API with Node, Express, MySQL and simple frontend",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3"
+  }
+}
