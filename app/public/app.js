@@ -110,7 +110,7 @@ async function handleLogin(event) {
 
   const data = await response.json();
   if (!response.ok) {
-    alert(data.message || 'Connexion echouee');
+    alert(data.error ? `${data.message}: ${data.error}` : data.message || 'Connexion echouee');
     return;
   }
 
@@ -132,7 +132,11 @@ async function handleRegister(event) {
 
   const registerData = await registerRes.json();
   if (!registerRes.ok) {
-    alert(registerData.message || 'Inscription echouee');
+    alert(
+      registerData.error
+        ? `${registerData.message}: ${registerData.error}`
+        : registerData.message || 'Inscription echouee'
+    );
     return;
   }
 
@@ -143,7 +147,7 @@ async function handleRegister(event) {
 
   const loginData = await loginRes.json();
   if (!loginRes.ok) {
-    alert(loginData.message || 'Connexion auto echouee');
+    alert(loginData.error ? `${loginData.message}: ${loginData.error}` : loginData.message || 'Connexion auto echouee');
     return;
   }
 
@@ -164,7 +168,7 @@ async function handleCreateTask(event) {
 
   if (!response.ok) {
     const data = await response.json();
-    alert(data.message || 'Impossible de creer la tache');
+    alert(data.error ? `${data.message}: ${data.error}` : data.message || 'Impossible de creer la tache');
     return;
   }
 
